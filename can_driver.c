@@ -1,6 +1,18 @@
 #include"header.h"
-
 extern CAN2 v;
+
+
+//void can2_init(void)
+//{
+//  	PINSEL1|=0X00014000;
+//	VPBDIV=1;
+//	C2MOD=0X1;
+//	AFMR=0X2;
+//	C2BTR=0X001C001D;
+//	C2MOD=0;
+//}
+
+
 
 /* can2_driver.c */
 
@@ -64,3 +76,4 @@ if(ptr->rtr==0)	 					// if dataframe
 	}
 	C2CMR=(1<<2);					// release Rx Buffer
 }
+

@@ -1,5 +1,6 @@
 /*----------Header files declarations-----------*/
 #include<LPC21XX.H>
+#include<string.h>
 
 /*----------Function declarations-----------*/
 
@@ -15,9 +16,14 @@ typedef unsigned int u32;
 extern void delay_sec(unsigned int);
 extern void delay_ms(unsigned int);
 
-/*********ADC FUNCTIONS*********/
-extern void adc_init(void);
-extern u16 adc_read(u8);
+/*----------LCD functions-----------*/
+extern void lcd_data(unsigned char);
+extern void lcd_cmd(unsigned char);
+extern void lcd_init(void);
+extern void lcd_string(signed char *);
+extern void lcd_cgram(void);
+extern void lcd_atoi(int);
+extern void lcd_atof(float);
 
 /*************CAN2*****************/
 typedef struct CAN2_MSG
@@ -35,6 +41,4 @@ extern void can2_init(void);
 void en_can2_interrupt(void);
 
 /*********  PROJECT - DASHBOARD Implemenation using CAN Protocol *********/
-extern void en_EINT_interrupts(void);
 extern void config_vic(void);
-
